@@ -1,8 +1,8 @@
 import myApp from "../app";
 
-describe("first test ...", () => {
+describe("test jasmine config...", () => {
   it("should not return a number", () => {
     console.log(typeof myApp());
-    expect(myApp()).toBeNaN();
+    expect(myApp()).not.toBeNaN();
   });
 });
