@@ -1,14 +1,14 @@
 {
   "name": "imageprocessingapi",
   "version": "1.0.0",
-  "description": "An endpind for resizing images.",
-  "main": "index.js",
+  "description": "An endpoint for resizing images.",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ahmed121221/image-resizer.git"
+    "url": "https://github.com/Ahmed121221/image-resizer.git"
   },
   "keywords": [
     "resize",
@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/Ahmed121221/image-resizer/issues"
   },
-  "homepage": "https://github.com/Ahmed121221/image-resizer#readme"
+  "homepage": "https://github.com/Ahmed121221/image-resizer#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
 }
