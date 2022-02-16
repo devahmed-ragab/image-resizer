@@ -1,0 +1,27 @@
+{
+  "name": "imageprocessingapi",
+  "version": "1.0.0",
+  "description": "An endpind for resizing images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed121221/image-resizer.git"
+  },
+  "keywords": [
+    "resize",
+    "images",
+    "api",
+    "typescript",
+    "express",
+    "node"
+  ],
+  "author": "Ahmed Ragab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmed121221/image-resizer/issues"
+  },
+  "homepage": "https://github.com/Ahmed121221/image-resizer#readme"
+}
