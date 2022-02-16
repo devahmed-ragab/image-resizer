@@ -4,7 +4,8 @@
   "description": "An endpoint for resizing images.",
   "main": "app.js",
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "lint": "eslint --ext  .ts --fix ."
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,11 @@
   "homepage": "https://github.com/Ahmed121221/image-resizer#readme",
   "devDependencies": {
     "@types/node": "^17.0.18",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   }
