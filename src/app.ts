@@ -1,14 +1,18 @@
 import express from "express";
+import apiRoutes from "./routes/api";
 
 const port = 3000;
 
 const app = express();
 
+app.use("/api", apiRoutes);
+
 app.use("/", (req: express.Request, res: express.Response) => {
-  res.status(200).send("<h1>Hellow</h1>");
+  console.log("home: redir to api/images");
+  res.redirect("/api/images");
 });
 
 app.listen(port, (): void => {
-  console.log("server is working...");
+  console.log("server is working...");  
 });
-  
+
