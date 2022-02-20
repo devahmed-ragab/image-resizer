@@ -4,3 +4,6 @@ node_modules
 # Ignore Build files    
 /dist
 
+#Ignore build Images
+/public/thumb
+
