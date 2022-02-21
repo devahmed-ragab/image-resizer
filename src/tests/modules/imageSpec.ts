@@ -17,7 +17,7 @@ describe("Image Instance :  ", () => {
   });
 
   xit("should  not find resaized image yet.", async () => {
-    const imgExistece = await img.existIn(img.cachePath());
+    const imgExistece = await img.cached();
     expect(imgExistece).toBeFalse();
   });
 
@@ -28,7 +28,7 @@ describe("Image Instance :  ", () => {
   });
 
   it("should find resized image.", async () => {
-    const imgExistece = await img.existIn(img.cachePath());
+    const imgExistece = await img.cached();
     expect(imgExistece).toBeTrue();
   });
 });

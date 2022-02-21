@@ -1,6 +1,11 @@
 import { promises as fspromises } from "fs";
 import path from "path";
 import sharp from "sharp";
+import { dirExists } from "./directory";
+enum PathType {
+  cashed,
+  orginal,
+}
 
 class Image {
   private _name: string;
@@ -10,9 +15,9 @@ class Image {
   private _cacheName: string;
   private _extintion = ".jpg";
 
-  static mainDir: string = path.resolve("public");
-  static originDir: string = path.join(Image.mainDir, "full");
-  static cacheDir: string = path.join(Image.mainDir, "thumb");
+  static readonly mainDir: string = path.resolve("public");
+  static readonly originDir: string = path.join(Image.mainDir, "full");
+  static readonly cacheDir: string = path.join(Image.mainDir, "thumb");
 
   constructor(name: string, width: number, height: number) {
     this._width = width;
@@ -32,10 +37,10 @@ class Image {
     return path.join(Image.cacheDir, this._cacheName + this._extintion);
   }
 
-  async existIn(path: string): Promise<boolean> {
+  async cached(): Promise<boolean> {
     // takes originPath() or cachePath() as parameter.
     try {
-      await fspromises.access(path);
+      await fspromises.access(this.cachePath());
       return true;
     } catch (e) {
       return false;
@@ -44,16 +49,21 @@ class Image {
 
   async resize(): Promise<string> {
     // resize and save image in cachePath().
+    const orginalImgExists = await dirExists(this.originPath());
+    if (!orginalImgExists)
+      throw new Error(`Iamge ${this._name} dose not exists.`);
+
     try {
-      const img = sharp(this.originPath());
-      img.resize({
+      const img = sharp(this.originPath()).resize({
         width: this._width,
         height: this._height,
       });
       await img.toFile(this.cachePath());
       return this.cachePath();
     } catch (e) {
-      throw new Error("An error occurred coulde't resize or save the image.");
+      throw new Error(
+        `An error occurred could't resize the iamge ${this._name}.`
+      );
     }
   }
 }
