@@ -51,7 +51,7 @@ class Image {
         }
     }
 }
-Image.mainDir = path_1.default.resolve("public");
+Image.mainDir = path_1.default.join(__dirname, "..", "..", "public");
 Image.originDir = path_1.default.join(Image.mainDir, "full");
 Image.cacheDir = path_1.default.join(Image.mainDir, "thumb");
 exports.default = Image;

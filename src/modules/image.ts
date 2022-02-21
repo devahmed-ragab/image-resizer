@@ -10,7 +10,7 @@ class Image {
   private _cacheName: string;
   private _extintion = ".jpg";
 
-  static readonly mainDir: string = path.resolve("public");
+  static readonly mainDir: string = path.join(__dirname, "..", "..", "public");
   static readonly originDir: string = path.join(Image.mainDir, "full");
   static readonly cacheDir: string = path.join(Image.mainDir, "thumb");
 
