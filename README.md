@@ -44,10 +44,16 @@ build and test project:
 npm run clean-code
 ```
 
-run nodemon to develop:
+run nodemon in developing:
 
 ```
 npm runn start-dev-server
+```
+
+run build:
+
+```
+npm runn start-server
 ```
 
 ## Contributing
