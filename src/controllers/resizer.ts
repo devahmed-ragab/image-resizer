@@ -6,7 +6,10 @@ import { createbDir, dirExists } from "../modules/directory";
 // if not create it.
 // check if image is there already.
 // of not resizr it.
-async function resizer(req: express.Request, res: express.Response) {
+async function resizer(
+  req: express.Request,
+  res: express.Response
+): Promise<void> {
   const { name, width, height } = req.query;
   const cacheDirExists = await dirExists(Image.cacheDir);
   const image = new Image(String(name), Number(width), Number(height));

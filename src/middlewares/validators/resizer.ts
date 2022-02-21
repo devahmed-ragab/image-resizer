@@ -5,9 +5,11 @@ const attributes: string[] = ["name", "width", "height"];
 function quiryExists(req: Request, res: Response, next: NextFunction): void {
   const quiryKeys = Object.keys(req.query);
   if (quiryKeys.length == 0) {
-    res.send(
-      'url should be like : "domainName:3000/api/images?name=ImageName&width=100&height=100"'
-    );
+    res
+      .status(200)
+      .send(
+        'url should be like : "domainName:3000/api/images?name=ImageName&width=100&height=100"'
+      );
   } else {
     next();
   }
