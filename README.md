@@ -12,7 +12,7 @@ npm i
 
 ## Description
 
-Resizer is a express/nodejs project tested with [jasmine](https://www.npmjs.com/package/jasmine)/[supertest](https://www.npmjs.com/package/supertest) and protected with [helmet](https://www.npmjs.com/package/helmet),[rate-limit](https://www.npmjs.com/package/express-rate-limit) and suported by esLint/prittier,it resize any Image in public/full directory with the follwing quiry variables,
+Resizer is a express/nodejs project tested with [jasmine](https://www.npmjs.com/package/jasmine)/[supertest](https://www.npmjs.com/package/supertest), protected with [helmet](https://www.npmjs.com/package/helmet),[rate-limit](https://www.npmjs.com/package/express-rate-limit) and suported by eslint/prittier, it resize any Image in public/full directory with the follwing quiry variables,
 
 ```
 name: String , width: Number, height: Number
