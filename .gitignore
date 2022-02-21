@@ -7,3 +7,4 @@ node_modules
 #Ignore build Images
 /public/thumb
 
+.DS_Store

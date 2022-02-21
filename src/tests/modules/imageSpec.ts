@@ -1,3 +1,4 @@
+import { promises as fspromises } from "fs";
 import Image from "../../modules/image";
 import sharp from "sharp";
 
@@ -16,7 +17,7 @@ describe("Image Instance :  ", () => {
     expect(cachePath).toBe("fjord40x40.jpg");
   });
 
-  xit("should  not find resaized image yet.", async () => {
+  xit("should  not find resaized image.", async () => {
     const imgExistece = await img.cached();
     expect(imgExistece).toBeFalse();
   });
@@ -30,5 +31,9 @@ describe("Image Instance :  ", () => {
   it("should find resized image.", async () => {
     const imgExistece = await img.cached();
     expect(imgExistece).toBeTrue();
+  });
+
+  afterAll(async () => {
+    await fspromises.rm(img.cachePath());
   });
 });

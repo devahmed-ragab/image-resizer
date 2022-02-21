@@ -23,7 +23,7 @@ async function resizer(req: express.Request, res: express.Response) {
     }
   } catch (e) {
     const error = e as Error;
-    res.status(400).send(error.message);
+    res.status(404).send(error.message);
   }
 }
 

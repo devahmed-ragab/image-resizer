@@ -2,11 +2,6 @@ import { promises as fspromises } from "fs";
 import path from "path";
 import sharp from "sharp";
 import { dirExists } from "./directory";
-enum PathType {
-  cashed,
-  orginal,
-}
-
 class Image {
   private _name: string;
   private _width: number;
