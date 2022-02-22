@@ -1,10 +1,10 @@
-import express from "express";
+import express from "express"
 
-import controller from "../controllers/resizer";
-import resizerValidators from "../middlewares/validators/resizer";
+import controller from "../controllers/resizer"
+import resizerValidators from "../middlewares/validators/resizer"
 
-const route = express.Router();
+const route = express.Router()
 
-route.get("/images", resizerValidators, controller.resizer);
+route.get("/images", resizerValidators, controller.resizer)
 
-export = route;
+export = route

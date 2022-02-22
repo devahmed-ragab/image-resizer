@@ -18,6 +18,7 @@ app.use("/", (req, res) => {
     res.status(301).redirect("/api/images");
 });
 app.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log("server is working...");
 });
 exports.default = app;

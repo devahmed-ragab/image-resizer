@@ -6,7 +6,7 @@ function quiryExists(req, res, next) {
     if (quiryKeys.length == 0) {
         res
             .status(200)
-            .send('url should be like : "domainName:3000/api/images?name=ImageName&width=100&height=100"');
+            .send("url should be like : 'domainName:3000/api/images?name=ImageName&width=100&height=100'");
     }
     else {
         next();
@@ -38,7 +38,7 @@ function missingValues(req, res, next) {
     // check for missing attributes
     const query = req.query;
     if (!(query.name && query.width && query.height)) {
-        res.status(400).send(`some or all attributes' values are missing.`);
+        res.status(400).send("some or all attributes' values are missing.");
     }
     else {
         next();

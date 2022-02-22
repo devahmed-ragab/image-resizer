@@ -1,11 +1,12 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express"
 
 function loger(req: Request, res: Response, next: NextFunction): void {
-  const date = new Date().toLocaleString();
+  const date = new Date().toLocaleString()
+  // eslint-disable-next-line no-console
   console.log(
     `${date} :  "${req.url}" : requested by ${req.socket.remoteAddress}.`
-  );
-  next();
+  )
+  next()
 }
 
-export default loger;
+export default loger
