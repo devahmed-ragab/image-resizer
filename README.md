@@ -22,7 +22,7 @@ Requesting : (get);
 DomainName:3000/image?name='imageName'&width='1080'&height='780'
 ```
 
-Requsted images will be cached im public/thumb directory to save your resources.
+Requsted images will be cached in public/thumb directory to save your resources.
 
 ## scripts
 
